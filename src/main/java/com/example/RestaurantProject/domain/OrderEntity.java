@@ -13,7 +13,7 @@ public class OrderEntity {
     public OrderEntity(){
 
     }
-    public OrderEntity(String name){
+    public OrderEntity(String name, int quantity, Date orderDate){
         this.name = name;
 
     }
