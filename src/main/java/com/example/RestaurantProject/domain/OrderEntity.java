@@ -2,6 +2,9 @@ package com.example.RestaurantProject.domain;
 
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.Date;
+
 @Entity
 @Table(name = "'order'")
 @Data
@@ -44,5 +47,5 @@ public class OrderEntity {
     private Long id;
     private String name;
     private int quantity;
-
+    private Date orderDate;
 }
