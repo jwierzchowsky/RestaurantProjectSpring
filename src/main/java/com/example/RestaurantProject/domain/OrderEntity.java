@@ -1,6 +1,8 @@
 package com.example.RestaurantProject.domain;
 
 import jakarta.persistence.*;
+
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 @Entity
 @Table(name = "'order'")
@@ -42,7 +44,9 @@ public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
     private int quantity;
+    private static final String menu = "Kotlet schabowy|pierogi|Filet z Kurczaka|Frytki|Ziemniaki|Rosoł|Pomidorowa";
+    @Pattern(regexp = menu, message = "Invalid dish name. Allowed dishes: Kotlet schabowy, pierogi, Filet z Kurczaka, Frytki, Ziemniaki, Rosół, Pomidorowa")
+    private String name;
 
 }
